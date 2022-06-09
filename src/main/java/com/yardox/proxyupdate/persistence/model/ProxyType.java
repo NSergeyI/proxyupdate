@@ -1,4 +1,4 @@
-package com.yardox.proxyupdate.model;
+package com.yardox.proxyupdate.persistence.model;
 
 public enum ProxyType {
     SOCKS,

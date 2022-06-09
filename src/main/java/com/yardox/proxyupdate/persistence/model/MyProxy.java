@@ -1,4 +1,6 @@
-package com.yardox.proxyupdate.model;
+package com.yardox.proxyupdate.persistence.model;
+
+import org.hibernate.annotations.Type;
 
 import java.util.Objects;
 import javax.persistence.*;
@@ -8,13 +10,14 @@ import javax.persistence.*;
 public class MyProxy {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
     private String host;
     private Integer port;
 
     @Enumerated(EnumType.STRING)
+    @Type(type = "genre_enum_type")
+    @Column(columnDefinition = "enum_type_proxy")
     private ProxyType proxyType;
 
     public MyProxy() {
@@ -22,6 +25,12 @@ public class MyProxy {
 
     public MyProxy(Long id, String host, Integer port, ProxyType proxyType) {
         this.id = id;
+        this.host = host;
+        this.port = port;
+        this.proxyType = proxyType;
+    }
+
+    public MyProxy(String host, Integer port, ProxyType proxyType) {
         this.host = host;
         this.port = port;
         this.proxyType = proxyType;

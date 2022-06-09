@@ -1,7 +1,7 @@
-package com.yardox.proxyupdate.service;
+package com.yardox.proxyupdate.persistence.service;
 
-import com.yardox.proxyupdate.model.MyProxy;
-import com.yardox.proxyupdate.repository.MyProxyRepository;
+import com.yardox.proxyupdate.persistence.model.MyProxy;
+import com.yardox.proxyupdate.persistence.repository.MyProxyRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -17,5 +17,10 @@ public class MyProxyService implements IMyProxyService{
     public List<MyProxy> findAll() {
         List<MyProxy> proxies = (List<MyProxy>) repository.findAll();
         return proxies;
+    }
+
+    @Override
+    public void saveAll(List<MyProxy> proxies) {
+        repository.saveAll(proxies);
     }
 }

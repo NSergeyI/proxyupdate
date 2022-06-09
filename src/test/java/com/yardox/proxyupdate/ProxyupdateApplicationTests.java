@@ -1,7 +1,7 @@
 package com.yardox.proxyupdate;
 
-import com.yardox.proxyupdate.model.MyProxy;
-import com.yardox.proxyupdate.service.IMyProxyService;
+import com.yardox.proxyupdate.persistence.model.MyProxy;
+import com.yardox.proxyupdate.persistence.service.IMyProxyService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;

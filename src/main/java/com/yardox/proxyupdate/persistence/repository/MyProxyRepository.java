@@ -1,6 +1,6 @@
-package com.yardox.proxyupdate.repository;
+package com.yardox.proxyupdate.persistence.repository;
 
-import com.yardox.proxyupdate.model.MyProxy;
+import com.yardox.proxyupdate.persistence.model.MyProxy;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
