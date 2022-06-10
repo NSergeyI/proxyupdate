@@ -37,7 +37,6 @@ public class ProxyController {
             e.printStackTrace();
         }
         if (!proxies.isEmpty()){
-//            proxies.add(new MyProxy("111111",new Integer(123), ProxyType.HTTP));
             myProxyService.saveAll(proxies);
         }
         return "parse";

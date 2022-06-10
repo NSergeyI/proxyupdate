@@ -18,7 +18,6 @@ public class MyProxyService implements IMyProxyService{
         List<MyProxy> proxies = (List<MyProxy>) repository.findAll();
         return proxies;
     }
-
     @Override
     public void saveAll(List<MyProxy> proxies) {
         repository.saveAll(proxies);
