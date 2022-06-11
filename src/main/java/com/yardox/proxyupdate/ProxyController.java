@@ -1,5 +1,6 @@
 package com.yardox.proxyupdate;
 
+import com.yardox.proxyupdate.checker.CheckService;
 import com.yardox.proxyupdate.parser.ParserFoxtoolsRU;
 import com.yardox.proxyupdate.persistence.model.MyProxy;
 import com.yardox.proxyupdate.persistence.model.ProxyType;
@@ -19,6 +20,8 @@ public class ProxyController {
 
     @Autowired
     private IMyProxyService myProxyService;
+    @Autowired
+    private CheckService checkService;
 
     @GetMapping("/showProxies")
     public String findProxy(Model model) {
@@ -40,5 +43,13 @@ public class ProxyController {
             myProxyService.saveAll(proxies);
         }
         return "parse";
+    }
+
+
+    @GetMapping("/check")
+    public String check(Model model) {
+        checkService.getProxiesFromBD();
+        checkService.checkMyProxy();
+    return "check";
     }
 }
