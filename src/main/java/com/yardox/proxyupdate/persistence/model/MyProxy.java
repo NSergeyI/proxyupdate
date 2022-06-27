@@ -2,12 +2,13 @@ package com.yardox.proxyupdate.persistence.model;
 
 import org.hibernate.annotations.Type;
 
+import java.io.Serializable;
 import java.util.Objects;
 import javax.persistence.*;
 
 @Entity
 @Table(name = "proxy")
-public class MyProxy {
+public class MyProxy implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
